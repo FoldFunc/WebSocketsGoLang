@@ -3,7 +3,7 @@ import sys
 import requests
 import websockets
 
-BASE_URL = "http://localhost:8080"
+BASE_URL = "http://192.168.1.19:8080"
 
 def register_user(email, password):
     url = f"{BASE_URL}/register"
@@ -26,7 +26,7 @@ def login_user(email, password):
     return session
 
 async def chat_client(user_id, peer_id):
-    uri = f"ws://localhost:8080/sendMessage?user_id={user_id}&peer_id={peer_id}"
+    uri = f"ws://192.168.1.19:8080/sendMessage?user_id={user_id}&peer_id={peer_id}"
     print(f"Connecting to {uri}")
     try:
         async with websockets.connect(uri) as websocket:

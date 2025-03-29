@@ -35,7 +35,7 @@ func main() {
 	// Note: WebSocket endpoints typically use GET.
 	app.Get("/sendMessage", websocket.New(sendMessageHandler))
 
-	log.Fatal(app.Listen(":8080"))
+	log.Fatal(app.Listen("192.168.1.19:8080"))
 }
 
 // User model
